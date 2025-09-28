@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+xarray
+pandas
+psycopg2-binary
+langchain
+langchain-ollama
+langchain-chroma
+langchain-huggingface
+huggingface-hub
+sentence-transformers
+indic-nlp-library
+python-multipart
