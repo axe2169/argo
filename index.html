@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="icon" href="images/logo.png">
+      <title>Indian National Centre for Ocean Information Services (INCOIS)</title>
+      <link href="css/base.css" rel="stylesheet" media="all">
+      <link href="css/base-responsive.css" rel="stylesheet" media="all">
+      <link href="css/grid.css" rel="stylesheet" media="all">
+      <link href="css/font.css" rel="stylesheet" media="all">
+      <link href="css/font-awesome.min.css" rel="stylesheet" media="all">
+      <link href="css/flexslider.css" rel="stylesheet" media="all">
+      <link href="css/megamenu.css" rel="stylesheet" media="all">
+      <link href="css/print.css" rel="stylesheet" media="print">
+      <link href="css/megamenu.css" rel="stylesheet" media="all">
+      <link href="css/site.css" rel="stylesheet" media="all">
+      <link href="css/site-responsive.css" rel="stylesheet" media="all">
+      <link href="css/ma5gallery.css" rel="stylesheet" type="text/css">
+      <link href="css/print_1.css" rel="stylesheet" type="text/css" media="print">
+      <link href="css/styles.css" rel="stylesheet" type="text/css">
+      <noscript>
+         <link href="/site/theme/css/no-js.css" type="text/css" rel="stylesheet">
+      </noscript>
+      <style>
+         a:focus, img:focus { outline: none !important; }
+         /* --- Chatbot Styles --- */
+         #chatbot-container {
+            position: fixed;
+            top: 150px; /* Adjust vertical position to not overlap header */
+            right: 25px;
+            z-index: 1000; /* Ensures the icon stays on top of other content */
+            cursor: pointer;
+         }
+         #chatbot-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%; /* Makes the image circular */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Adds a subtle shadow */
+            transition: transform 0.2s ease-in-out;
+         }
+         #chatbot-icon:hover {
+            transform: scale(1.1); /* Slightly enlarges the icon on hover */
+         }
+      </style>
+   </head>
+   <body>
+      <div id="fb-root"></div>
+      <header>
+         <section class="wrapper header-wrapper">
+            <div class="container-fluid common-container four_content  header-container" style="padding-left: 5px;">
+               <h2 class="logo">
+                  <a href="/site/index.jsp" title="Home" rel="home" class="header__logo" id="logo">
+                  <img class="national_emblem" src="images/logo.svg" alt="incois">
+                  </a>
+               </h2>
+               <h2 class="logo">
+                  <a href="/site/index.jsp" title="Home" rel="home" class="header__logo" id="logo">
+                     <em>
+                        <span style="color: rgb(15, 96, 172);">भारतीय राष्ट्रीय महासागर सूचना सेवा केन्द्र</span>
+                        <span>
+                           <h6 style="color: rgb(6, 38, 68);">(पृथ्वी विज्ञान मंत्रालय, भारत सरकार के अधीन एक स्वायत्त निकाय)</h6>
+                        </span>
+                        <span style="color: rgb(15, 96, 172);">Indian National Centre for Ocean Information Services</span>
+                        <span>
+                           <h6 style="color: rgb(6, 38, 68);">(An Autonomous Body under the Ministry of Earth Sciences, Govt. of India)</h6>
+                        </span>
+                     </em>
+                  </a>
+               </h2>
+               <div class="header-right clearfix">
+                  <div class="right-content clearfix">
+                     <div class="float-element">
+                        <div class="common-right clearfix">
+                           <ul id="header-nav">
+                              <li class="ico-skip cf"><a href="/site/rti.jsp" title="">RTI</a>
+                              </li>
+                              <li class="ico-skip cf"><a href="/site/tenders.jsp" title="">Tenders</a>
+                              </li>
+                              <li class="ico-skip cf"><a href="https://vacancies.incois.gov.in/" title="">Vacancies</a>
+                              </li>
+                              <li class="ico-social cf">
+                                 <a href="javascript:void(0);" id="toggleSocial" title="Social Medias">
+                                 <img class="top" src="images/ico-social.png" alt="Social Medias"></a>
+                                 <ul>
+                                    <li><a target="_blank" title="facebook" href="https://www.facebook.com/profile.php?id=100095071570299/"><img alt="Facebook Page" src="images/ico-facebook.png"></a></li>
+                                    <li><a target="_blank" title="Twitter" href="https://x.com/ESSO_INCOIS/"><img alt="Twitter Page" src="images/ico-twitter.png"></a></li>
+                                    <li><a target="_blank" title="Youtube" href="https://www.youtube.com/@incoisofficialhyderabad942/"><img alt="youtube Page" src="images/ico-youtube.png"></a></li>
+                                    <li><a target="_blank" title="LinkedIn" href="http://www.linkedin.com/company/indian-national-centre-for-ocean-information-services-incois-/?viewAsMember=true/"><img alt="youtube Page" src="images/ico-linkedin.png"></a></li>
+                                    <li><a target="_blank" title="Instagram" href="https://www.instagram.com/incois_official/"><img alt="youtube Page" src="images/ico-instagram.png"></a></li>
+                                 </ul>
+                              </li>
+                              <li class="ico-accessibility cf">
+                                 <a href="javascript:void(0);" id="toggleAccessibility" title="Accessibility Dropdown">
+                                 <img class="top" src="images/ico-accessibility.png" alt="Accessibility Dropdown">
+                                 </a>
+                                 <ul style="visibility: hidden;">
+                                    <li> <a onclick="set_font_size('increase')" title="Increase font size" href="javascript:void(0);">A<sup>+</sup>
+                                       </a> 
+                                    </li>
+                                    <li> <a onclick="set_font_size()" title="Reset font size" href="javascript:void(0);">A<sup> </sup></a> </li>
+                                    <li> <a onclick="set_font_size('decrease')" title="Decrease font size" href="javascript:void(0);">A<sup>-</sup></a> </li>
+                                    <li> <a href="javascript:void(0);" class="high-contrast dark" title="High Contrast">A</a> </li>
+                                    <li> <a href="javascript:void(0);" class="high-contrast light" title="Normal Contrast" style="display: none;">A</a> </li>
+                                 </ul>
+                              </li>
+                              <li class="ico-sitemap cf">
+                                 <a href="/site/sitemap.jsp" title="Sitemap">
+                                 <img class="top" src="images/ico-sitemap.png" alt="Sitemap"></a>
+                              </li>
+                              <li class="hindi cmf_lan d-hide">
+                                 <label class="de-lag">
+                                    <span style="display: none;">Language</span>
+                                    <select title="Select Language">
+                                       <option>English</option>
+                                       <option>हिन्दी</option>
+                                    </select>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="wrapper megamenu-wraper">
+            <div class="container-fluid four_content" style="padding-left: 5px;">
+               <p class="showhide"><em></em><em></em><em></em></p>
+               <nav class="main-menu clearfix" id="main_menu" style="">
+                  <ul class="nav-menu">
+                     <li class="nav-item"> <a href="/site/index.jsp" class="home"><i class="fa fa-home"></i></a> </li>
+                     <li class="nav-item">
+                        <a href="/site/aboutus.jsp">About Us</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li><a href="/site/aboutus.jsp">About INCOIS </a></li>
+                              <li><a href="/site/vision.jsp">Vision / Mission </a></li>
+                              <li><a href="/site/minister.jsp">Our Minister </a></li>
+                              <li><a href="/site/chairman.jsp">Our Secretary </a></li>
+                              <li><a href="/site/director.jsp">Our Director</a></li>
+                              <li><a href="/site/structure.jsp">Organizational Structure </a></li>
+                              <li><a href="/site/whos_who.jsp">Who is who </a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#services">  Services </a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li><a href="/site/ecosystem.jsp">Ecosystem Services</a></li>
+                              <li><a href="/site/multihazard.jsp">Multi-Hazard Services</a></li>
+                              <li><a href="/site/forecast.jsp">Forecast / Nowcast Services</a></li>
+                              <li><a href="/site/climate-change.jsp">Climate Services</a></li>
+                              <li><a href="/site/international.jsp">International Services</a></li>
+                              </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#">Ocean Observations & Data</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li class="has-submenu">
+                                 <a href="/site/dataholdings.jsp">Data Holdings</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="/site/datainfo/OON.jsp">Ocean Observations</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="/site/uc.jsp">Project Datasets</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="https://las.incois.gov.in/">Live Access Server</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="https://erddap.incois.gov.in/">ERDDAP</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="/site/datainfo/jointportal.jsp">MoES-NOAA OMNI-RAMA Joint Data Portal</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="https://incois.gov.in/essdp/">Earth System Science Data Portal</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#">Applied Research</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li class="has-submenu">
+                                 <a href="/site/datainfo/modelling/modelling.jsp">Modelling & Research</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="#">Missions</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li class="has-submenu">
+                                 <a href="/site/deep-ocean.jsp">Deep Ocean Mission</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="/site/mausam_misson.jsp">Mausam Mission</a>
+                              </li>
+                              <li class="has-submenu">
+                                 <a href="/site/uc.jsp">Monsoon Mission</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item"><a href="/site/itcoocean/ITCOocean.jsp">ITCOocean</a></li>
+                     <li class="nav-item">
+                        <a href="javascript:void(0);"> ICT</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li><a href="/site/services/hpc.jsp">HPC</a></li>
+                              <li><a href="/site/services/software.jsp">Web Development</a></li>
+                              <li><a href="/site/services/software.jsp">Software Development</a></li>
+                              <li><a href="/site/services/comm-network.jsp">Communication Network</a></li>
+                              <li><a href="/site/uc.jsp" target="_blank">Disseminate Information</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="javascript:void(0);"> International Programs</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <ul class="sub-nav-group">
+                                 <li><a href="/site/uc.jsp">IOGOOS</a></li>
+                                 <li><a href="/site/uc.jsp">SIBER</a></li>
+                                 <li><a href="/site/uc.jsp">IIOE</a></li>
+                                 <li><a href="/IIOE-2/index.jsp">IIOE - 2</a></li>
+                                 <li><a href="/IIW/NDCC/index.jsp" target="_blank">NDCC</a></li>
+                                 <li><a href="/IIW/DCCIOR/index.jsp" target="_blank">DCC-IOR</a></li>
+                              </ul>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="javascript:void(0);"> Others</a>
+                        <div class="sub-nav">
+                           <ul class="sub-nav-group">
+                              <li><a href="/site/annual_report.jsp">Annual Reports </a></li>
+                              <li><a href="/site/technical_report.jsp">Technical Reports </a></li>
+                              <li><a href="/site/research_pub.jsp">Research Publications</a></li>
+                              <li><a href="/site/general_reports.jsp">General Reports </a></li>
+                              <li><a href="/site/news.jsp">News & Announcements</a></li>
+                              <li><a href="/site/awards.jsp">Awards</a></li>
+                              <li><a href="/site/events.jsp">Events</a></li>
+                              <li><a href="/site/icc.jsp">Internal Complaints Committee</a></li>
+                              <li><a href="/site/gallery.jsp">Photo / Videos Gallery </a></li>
+                              <li><a href="https://youtube.com/playlist?list=PLWhan-NjT91bUhEZvZlLHci8zZttVQ2Ev&si=vtsxMgPoAhCRwnU4" target="_blank">Documentary Films </a></li>
+                              <li><a href="https://incois.gov.in/Tutor/index.html " target="_blank">Ocean Tutor</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="nav-item"><a href="/site/contactus.jsp">Contact Us</a></li>
+                  </ul>
+               </nav>
+               <nav class="main-menu clearfix" id="overflow_menu">
+                  <ul class="nav-menu clearfix">
+                  </ul>
+               </nav>
+            </div>
+         </section>
+      </header>
+      <section class="wrapper banner-wrapper">
+         <div id="flexSlider" class="flexslider">
+            <ul class="slides">
+               <li>
+                  <a href="#" target="_blank">
+                  <img src="images/women_slider.jpg" alt="Banner 1" title="SNSP">
+                  <p class="flex-caption">Swasth Nari, Sashakt Parivar Abhiyaan (SNSP)</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="#" target="_blank">
+                  <img src="images/swachatha_slider.jpg" alt="Banner 1" title="SHS">
+                  <p class="flex-caption">Swachhata Hi Seva-2025</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://figa2025.incois.gov.in/" target="_blank">                  
+                  <img src="images/figa2025-slider.jpg" alt="Banner 1" title="FIGA">
+                  <p class="flex-caption">FIGA-2025: Call for Abstract Submission is open now</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://its2025.incois.gov.in/its2025/odtp.jsp" target="_blank">                  
+                  <img src="images/odtp-slider.jpg" alt="Banner 1" title="FIGA">
+                  <p class="flex-caption">FIRST OCEAN DECADE TSUNAMI PROGRAMME (ODTP) CONFERENCE - Registration Open Now </p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://its2025.incois.gov.in/" target="_blank">                  
+                  <img src="images/its2025-slider.jpg" alt="Banner 2" title="ITS 2025">
+                  <p class="flex-caption">ITS-2025 : Registration Open Now </p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://iiosc2025.incois.gov.in/" target="_blank">                  
+                  <img src="images/iiosc2025-slider.jpg" alt="Banner 2" title="IIOSC 2025">
+                  <p class="flex-caption">IIOSC-2025: Registration Open Now</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/vision.jsp" target="_blank">
+                  <img src="images/1.png" alt="Banner 1r" title="Vision">                  
+                  <p class="flex-caption">Vision</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/vision.jsp" target="_blank">
+                  <img src="images/2.png" alt="Banner 2" title="Mission">                  
+                  <p class="flex-caption">Mission</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/datainfo/OON.jsp" target="_blank">
+                  <img src="images/3.png" alt="Banner 2" title="Ocean Observations">                  
+                  <p class="flex-caption">Ocean Observations</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/ecosystem.jsp" target="_blank">
+                  <img src="images/4.png" alt="Banner 3" title="Ecosystem Services">
+                  <p class="flex-caption">Ecosystem Services</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/multihazard.jsp" target="_blank">
+                  <img src="images/5.png" alt="Banner 3" title="Multihazard Services">
+                  <p class="flex-caption">Multihazard Services</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/ict.jsp" target="_blank">
+                  <img src="images/6.png" alt="Banner 3" title="ICT">
+                  <p class="flex-caption">Information, Communication Technology & Engineering Services</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/itcoocean/ITCOocean.jsp" target="_blank">
+                  <img src="images/7.png" alt="Banner 3" title="ITCOocean">
+                  <p class="flex-caption">International Training Centre for Operational Oceanography(ITCOocean)</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/climate-change.jsp" target="_blank">
+                  <img src="images/8.png" alt="Banner 3" title="Climate Services">
+                  <p class="flex-caption">Climate Services</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/deep-ocean.jsp" target="_blank">
+                  <img src="images/9.png" alt="Banner 3" title="Deep Ocean Mission">
+                  <p class="flex-caption">Deep Ocean Mission</p>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://incois.gov.in/site/datainfo/modelling/modelling.jsp" target="_blank">
+                  <img src="images/10.png" alt="Banner 3" title="Unified Ocean Modelling & Forecasting">
+                  <p class="flex-caption">Unified Ocean Modelling & Forecasting </p>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <div class="wrapper" id="skipCont"></div>
+      <section class="news">
+         <div class="container common-container carousel-container">
+            <div id="news-Carousel" class="flexslider carousel ">
+               <ul class="slides">
+                  <li><a href="#" title="Latest update 1 goes here">Latest Earthquake /Tsunami Information bulletin</a></li>
+                  <li><a href="/site/services/hwa.jsp" title="Latest update 2 goes here">High waves /Swell surge bulletin</a></li>
+                  <li><a href="#" title="Latest update 3 goes here">Cyclone / Storm Surge bulletin</a></li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <style>
+         .container-service {
+         max-width: 1200px;
+         margin: auto;
+         padding: 20px;
+         }
+         .service-tabs {
+         display: flex;
+         justify-content: center;   /* centers horizontally */
+         align-items: center;       /* centers vertically */
+         background-color: #0e4d92;
+         padding: 10px;
+         flex-wrap: wrap;
+         }
+         .service-tab {
+         color: white;
+         padding: 10px 20px;
+         cursor: pointer;
+         background-color: #0e4d92;
+         margin-right: 5px;
+         border-radius: 5px;
+         transition: background 0.3s;
+         }
+         .service-tab.active {
+         background-color: #c29840;
+         }
+         .content-services {
+         padding: 20px;
+         text-align: center;
+         height: 350px;
+         overflow-y: auto;
+         }
+         .category-services {
+         font-size: 20px;
+         font-weight: bold;
+         margin-bottom: 10px;
+         }
+         .image-container {
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 10px;
+         }
+         .image-container img {
+         max-width: 200px;
+         height: auto;
+         border-radius: 5px;
+         cursor: pointer;
+         }
+         .service-content {
+         display: none;
+         }
+         .service-content.active {
+         display: block;
+         }
+         @media (max-width: 600px) {
+         .service-tabs {
+         flex-direction: column;
+         }
+         .image-container img {
+         width: 45%;
+         max-width: 150px;
+         }
+         .container-service {
+         height: auto;
+         }
+         }
+         a:focus,img:focus {
+         outline: none !important;
+         }
+         ul.content_list.list li {
+         border-bottom: none !important;
+         border: none !important;
+         outline: none !important;
+         }
+      </style>
+      <div class="container-service">
+         <div class="service-tabs">
+            <div class="service-tab active" onclick="showService('eco')">ECO-SYSTEM</div>
+            <div class="service-tab" onclick="showService('multi')">MULTI HAZARD</div>
+            <div class="service-tab" onclick="showService('nowcast')">FORECAST / NOWCAST</div>
+            <div class="service-tab" onclick="showService('climate')">CLIMATE</div>
+            <div class="service-tab" onclick="showService('international')">INTERNATIONAL</div>
+            </div>
+         <div class="content-services">
+            <div id="eco" class="service-content active">
+               <div class="category-services">ECO-SYSTEM SERVICES</div>
+               <div class="image-container">
+                  <a href="/MarineFisheries/TextDataHome?mfid=1&request_locale=en" target="_blank">
+                  <img src="images/pfz.svg" alt="PFZ">
+                  </a>
+                  <a href="/MarineFisheries/TextDataHome?mfid=2&request_locale=en" target="_blank">
+                  <img src="images/tuna-fishing.svg" alt="Tuna Fishing">
+                  </a>
+                  <a href="/oceanservices/Hilsa/index.jsp" target="_blank">
+                  <img src="images/hilsa.svg" alt="Other Forecast Advisory">
+                  </a>
+                  <a href="/site/services/coralReef.jsp" target="_blank">
+                  <img src="images/cbas.svg" alt="CBAS">
+                  </a>
+                  <a href="/site/services/hab.jsp" target="_blank">
+                  <img src="images/algal-bloom.svg" alt="Algal Bloom">
+                  </a>
+               </div>
+            </div>
+            <div id="multi" class="service-content">
+               <div class="category-services">MULTI HAZARD SERVICES</div>
+               <div class="image-container">
+                  <a href="https://tsunami.incois.gov.in/TEWS/" target="_blank">
+                  <img src="images/tsunami-early-warning.svg" alt="Tsunami Warning">
+                  </a>
+                  <a href="https://tsunami.incois.gov.in/TEWS/AboutStormSurge.jsp" target="_blank">
+                  <img src="images/storm-surge.svg" alt="Storm Surge">
+                  </a>
+                  <a href="/site/services/hwa.jsp" target="_blank">
+                  <img src="images/high-wave-alerts.svg" alt="High Wave Alerts">
+                  </a>
+                  <a href="https://oosa.incois.gov.in/OOSA/" target="_blank">
+                  <img src="images/oil-spil-advisory.svg" alt="Oil Spill">
+                  </a>
+                  <a href="/site/services/jointbulletin.jsp" target="_blank">
+                  <img src="images/incois-imd-bulletin.svg" alt="Incois-IMD bulletin">
+                  </a>
+                  <a href="/site/services/SVA_overview.jsp" target="_blank">
+                  <img src="images/svas.svg" alt="SVAS">
+                  </a>
+                  <a href="https://sarat.incois.gov.in/sarat/home.jsp" target="_blank">
+                  <img src="images/sarat.svg" alt="SARAT">
+                  </a>
+                  <a href="/oceanservices/mhw/index.jsp" target="_blank">
+                  <img src="images/marine-heatwaves.svg" alt="Marine Heat Waves">
+                  </a>
+                  </div>
+            </div>
+            <div id="nowcast" class="service-content">
+               <div class="category-services">FORECAST / NOWCAST SERVICES</div>
+               <div class="image-container">
+                  <a href="/site/services/osf.jsp" target="_blank">
+                  <img src="images/ocean-state-forecasts.svg" alt="Ocean Forecast">
+                  </a>
+                  <a href="/site/services/pat.jsp" target="_blank">
+                  <img src="images/pat.svg" alt="Predicted Astronomical Tide">
+                  </a>
+                  <a href="https://sarat.incois.gov.in/OSF/" target="_blank">
+                  <img src="images/ports-and-harbours.svg" alt="Ports and Harbours">
+                  </a>
+                  <a href="https://sarat.incois.gov.in/shipforecast/Login.jsp" target="_blank">
+                  <img src="images/forecast-along-ship.svg" alt="Forcast along ship routes">
+                  </a>
+                  <a href="/site/services/water_quality.jsp" target="_blank">
+                  <img src="images/water-quality-nowcast.svg" alt="Water Quality Nowcast System">
+                  </a>
+                  <a href="/site/services/tchp.jsp" target="_blank">
+                  <img src="images/tropical-cyclone.svg" alt="TCHP">
+                  </a>
+                  <a href="/site/services/lsf.jsp" target="_blank">
+                  <img src="images/location_specific_forecast.svg" alt="location_specific_forecast">
+                  </a>
+                  <a href="/site/services/global.jsp" target="_blank">
+                  <img src="images/global_forecast.svg" alt="global_forecast">
+                  </a>
+                  <a href="https://incois.gov.in/oceanservices/energyatlashome.jsp" target="_blank">
+                  <img src="images/energy-atlas.svg" alt="energy-atlas">
+                  </a>
+                  </div>
+            </div>
+            <div id="climate" class="service-content">
+               <div class="category-services">CLIMATE SERVICES</div>
+               <div class="image-container">
+                  <a href="/site/climate-change.jsp" target="_blank">
+                  <img src="images/climate-services.svg" alt="Climate Services">
+                  </a>
+               </div>
+            </div>
+            <div id="international" class="service-content">
+               <div class="category-services">INTERNATIONAL SERVICES</div>
+               <div class="image-container">
+                  <a href="/site/services/rsmc.jsp" target="_blank">
+                  <img src="images/rsmc.svg" alt="RSMC">
+                  </a>
+                  <a href="/site/services/pacific.jsp" target="_blank">
+                  <img src="images/ocean-services.svg" alt="Pacific Island">
+                  </a>
+                  <a href="/oceanservices/cscocean.jsp" target="_blank">
+                  <img src="images/colombo.svg" alt="Colombo security concalve">
+                  </a>
+                  <a href="/site/services/rimes.jsp" target="_blank">
+                  <img src="images/neighbor_countries.svg" alt="neighbor_countries">
+                  </a>
+                  </div>
+            </div>
+            <div id="deep" class="service-content">
+               <div class="category-services">DEEP OCEAN MISSION</div>
+               <div class="image-container">
+                  <a href="/site/deep-ocean.jsp" target="_blank">
+                  <img src="images/deep-ocean.svg" alt="Deep Ocean Mission">
+                  </a>
+               </div>
+            </div>
+            <div id="ict" class="service-content">
+               <div class="category-services">ICT</div>
+               <div class="image-container">
+                  <a href="/site/services/hpc.jsp" target="_blank">
+                  <img src="images/hpc.svg" alt="HPC">
+                  </a>
+                  <a href="/site/services/software.jsp" target="_blank">
+                  <img src="images/web-devlopment.svg" alt="Web Development">
+                  </a>
+                  <a href="/site/services/software.jsp" target="_blank">
+                  <img src="images/software.svg" alt="Software Development">
+                  </a>
+                  <a href="/site/uc.jsp" target="_blank">
+                  <img src="images/disseminate.svg" alt="Disseminate Information">
+                  </a>
+                  <a href="/site/services/comm-network.jsp" target="_blank">
+                  <img src="images/communication-nw.svg" alt="Communication Network">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         function showService(id) {
+             document.querySelectorAll('.service-content').forEach(div => div.classList.remove('active'));
+             document.getElementById(id).classList.add('active');
+         
+             document.querySelectorAll('.service-tab').forEach(tab => tab.classList.remove('active'));
+             event.target.classList.add('active');
+         }
+      </script>
+      <section id="fontSize" class="wrapper body-wrapper ">
+         <h2 style="display: none;">Body</h2>
+         <div class="bg-wrapper top-bg-wrapper gray-bg padding-top-bott">
+            <div class="container common-container four_content body-container top-body-container padding-top-bott2">
+               <div class="minister clearfix">
+                  <div class="minister-box clearfix">
+                     <div class="minister-sub1">
+                        <div class="minister-image"><a href="/site/SAMUDRA/index.html" target="_blank"><img src="images/samudra.png" alt="central minster"></a></div>
+                        <a href="/site/SAMUDRA/index.html" target="_blank">
+                        </a>
+                     </div>
+                     <a href="/site/SAMUDRA/index.html" target="_blank">
+                        <hr>
+                        <br>
+                     </a>
+                     <div class="minister-sub1 state">
+                        <a href="/site/SAMUDRA/index.html" target="_blank">
+                           <div class="minister-image"><img src="images/app-ios.png" alt="state minster"></div>
+                        </a>
+                        <div class="min-info">
+                           <a href="/site/SAMUDRA/index.html" target="_blank">
+                           </a>
+                           <h2><a href="/site/SAMUDRA/index.html" target="_blank">Samudra App</a></h2>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="page-tab clearfix">
+                  <div class="page-tab-res clearfix">
+                     <div id="parentHorizontalTab">
+                        <ul class="resp-tabs-list hor_1" id="tab-heading">
+                           <li id="hor_1_tab_item-6">Latest Bulletins</li>
+                           <li id="hor_1_tab_item-0">What's New</li>
+                           <li id="hor_1_tab_item-1">Awards</li>
+                           <li id="hor_1_tab_item-2">Publications</li>
+                           <li id="hor_1_tab_item-3">Vacancies</li>
+                           <li id="hor_1_tab_item-4">Tenders</li>
+                           <li id="hor_1_tab_item-5">RTI</li>
+                        </ul>
+                        <div class="resp-tabs-container hor_1">
+                           <div class="clearfix" id="hor_1_tab_item-6">
+                              <div class="bulletins-row">
+                                 <div class="bulletin-item">
+                                    <a href="https://tsunami.incois.gov.in/TEWS/">
+                                    <img src="images/tsunami.png" alt="Bulletin 1">
+                                    <p>Earthquake / Tsunami Information Bulletin<img src="images/new.gif" width="40px;" height="50px;"> </p>
+                                    </a>
+                                 </div>
+                                 <div class="bulletin-item">
+                                    <a href="/site/services/hwa.jsp">
+                                    <img src="images/high-wave.png" alt="Bulletin 1">
+                                    <p>High Wave / Swell Surge Bulletin<img src="images/new.gif" width="40px;" height="50px;"></p>
+                                    </a>
+                                 </div>
+                                 <div class="bulletin-item">
+                                    <a href="/site/services/jointbulletin.jsp" target="_blank">
+                                    <img src="images/cyclone.png" alt="Bulletin 1">
+                                    <p>INCOIS IMD Joint Bulletin</p>
+                                    </a>
+                                 </div>
+                                 <div class="bulletin-item">
+                                    <a href="/site/climate-change.jsp#enso_bulletin">
+                                    <img src="images/enso.png" alt="Bulletin 1">
+                                    <p>ESSO Outlook Bulletin<img src="images/new.gif" width="40px;" height="50px;"></p>
+                                    </a>
+                                 </div>
+                              </div>
+                              <br><br><br>
+                              <div class="view-footer-tab"> <a href="#" title="Click here to know more"> <span>Read more </span></a></div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-0">
+                              <ul class="content_list tenders-list" id="newsContent">
+                                 <li>Error loading content.</li>
+                              </ul>
+                              <div class="view-footer-tab"> 
+                                 <a href="/site/news.jsp" title="Click here to know more"> 
+                                 <span>Read more </span>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-1">
+                              <div id="awardsContent"></div>
+                              <div class="view-footer-tab">
+                                 <a href="/site/awards.jsp" title="Click here to know more"><span>View more</span></a>
+                              </div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-2">
+                              <div id="publicationsContent"></div>
+                              <div class="view-footer-tab">
+                                 <a href="/site/research_pub.jsp" title="Click here to know more"><span>View more</span></a>
+                              </div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-3">
+                              <ul class="content_list  list">
+                                 <li>
+                                    <i class="fa fa-arrow-right"></i>
+                                    <a href="https://vacancies.incois.gov.in/jobs/incois0225/screeninglist.jsp">Advt. No. INCOIS/RMT/02/2025 : Screening Results Published <img src="images/new.gif" width="40px;" height="50px;"></a>
+                                 </li>
+                                 <li>
+                                    <i class="fa fa-arrow-right"></i>
+                                    <a href="https://vacancies.incois.gov.in/jobs/incois1224/screeninglist.jsp">Advt. No. INCOIS/RMT/01/2025.; Results Published</a>
+                                 </li>
+                              </ul>
+                              <div class="view-footer-tab"> <a href="#" title="Click here to know more"> <span>View more </span></a></div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-4">
+                              <div id="tendersContent"></div>
+                              <div class="view-footer-tab">
+                                 <a href="/site/tenders.jsp" title="Click here to know more"><span>View more</span></a>
+                              </div>
+                           </div>
+                           <div class="clearfix" id="hor_1_tab_item-5">
+                              <ul class="content_list tenders-list">
+                                 <li>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <a href="/documents/RTI/Uploads/INCOIS-RTI-Suomoto-Disclosure-Details-April_24-25.pdf"> 
+                                    Suo motu disclosure of information under Section 4 of the RTI Act                                  
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    <a href="/documents/RTI/Uploads/RTI_Appeal_Applications_April2024-March2025.pdf"> 
+                                    RTI Appeals received and responded by the Public Authority INCOIS during April 2024 – March 2025                                 
+                                    </a>
+                                 </li>
+                              </ul>
+                              <div class="view-footer-tab"> <a href="#" title="Click here to know more"> <span>View More </span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="wrapper carousel-wrapper">
+         <div class="container common-container four_content carousel-container">
+            <div id="flexCarousel" class="flexslider carousel">
+               <ul class="slides">
+                  <li><a target="_blank" href="https://www.moes.gov.in/" title="Ministry of Earth Sciences">
+                     <img src="images/10.svg" alt="MoES" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://www.niot.res.in/" title="National Institute of Ocean Technology">
+                     <img src="images/1.svg" alt="NIOT" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://seismo.gov.in/" title="National Center for Seismology">
+                     <img src="images/2.svg" alt="NCS" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://ncess.gov.in/" title="National Centre for Earth Science Studies ">
+                     <img src="images/3.svg" alt="NCESS" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="http://tropmet.res.in/" title="Indian Institute of Tropical Meteorology">
+                     <img src="images/4.svg" alt="IITM" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://www.nccr.gov.in/" title="National Centre for Coastal Research"> 
+                     <img src="images/5.svg" alt="NCCR" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://www.ncmrwf.gov.in/" title="National Centre For Medium Range Weather Forecasting">
+                     <img src="images/6.svg" alt="NCMRWF" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://www.cmlre.gov.in/" title="Centre for Marine Living Resources & Ecology">
+                     <img src="images/7.svg" alt="CMLRE" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://ncpor.res.in/" title="National Centre for Polar and Ocean Research"> 
+                     <img src="images/8.svg" alt="NCPOR" style="width:60%;"></a>
+                  </li>
+                  <li><a target="_blank" href="https://mausam.imd.gov.in/" title="India Meteorological Department">
+                     <img src="images/9.svg" alt="IMD" style="width:60%;"></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <footer class="wrapper footer-wrapper">
+         <div class="footer-top-wrapper">
+            <div class="container common-container four_content footer-top-container">
+               <ul>
+                  <li><a href="/site/disclaimer.jsp">Disclaimer</a></li>
+                  <a target="_blank" href="https://profile.globalsign.com/SiteSeal/siteSeal/profile/profile.do?p1=77bec532&p2=1981a0a9365eb4f302fd2be4261f111b415d1bef589ff5f37041ecad1f9d29ec260a55065b4e07aa7d81a2ae3443ebb65fa2&p3=7b3527f4c34b807ad0e4e6b2f0ec4b4e7dddb1c2" title="">
+                  <img src="images/ssl-secure.png" alt="SSL Secure" width="50%">
+                  </a>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom-wrapper">
+            <div class="container common-container four_content footer-bottom-container">
+               <div class="footer-content clearfix">
+                  <div class="copyright-content">
+                     Content Managed by 
+                     <strong>Information, Communication Engineering & Technology (ICT) Department, INCOIS, Hyderabad | Last Updated: 09-01-2025 | Visitors: 08484</strong>
+                  </div>
+                  <a target="_blank" href="https://profile.globalsign.com/SiteSeal/siteSeal/profile/profile.do?p1=77bec532&p2=1981a0a9365eb4f302fd2be4261f111b415d1bef589ff5f37041ecad1f9d29ec260a55065b4e07aa7d81a2ae3443ebb65fa2&p3=7b3527f4c34b807ad0e4e6b2f0ec4b4e7dddb1c2" title="">
+                  <img src="theme/images/social/ssl-secure.png" alt="SSL Secure" width="50%">
+                  </a>
+                  <ul class="social-links">
+                     <li><a target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100095071570299/"><img alt="Facebook" src="assets/images/ico-facebook.png"></a></li>
+                     <li><a target="_blank" title="Twitter" href="https://x.com/ESSO_INCOIS/"><img alt="Twitter" src="assets/images/ico-twitter.png"></a></li>
+                     <li><a target="_blank" title="YouTube" href="https://www.youtube.com/@incoisofficialhyderabad942/"><img alt="YouTube" src="assets/images/ico-youtube.png"></a></li>
+                     <li><a target="_blank" title="LinkedIn" href="http://www.linkedin.com/company/indian-national-centre-for-ocean-information-services-incois-/?viewAsMember=true/"><img alt="LinkedIn" src="assets/images/ico-linkedin.png"></a></li>
+                     <li><a target="_blank" title="Instagram" href="https://www.instagram.com/incois_official/"><img alt="Instagram" src="assets/images/ico-instagram.png"></a></li>
+                  </ul>
+                  <div class="last-updated">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="footer-bottom-wrapper">
+            <div class="container common-container four_content footer-bottom-container">
+               <div class="footer-content clearfix">
+                  <ul class="social-links">
+                     <li><a target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100095071570299/"><img alt="Facebook" src="assets/images/ico-facebook.png"></a></li>
+                     <li><a target="_blank" title="Twitter" href="https://x.com/ESSO_INCOIS/"><img alt="Twitter" src="assets/images/ico-twitter.png"></a></li>
+                     <li><a target="_blank" title="YouTube" href="https://www.youtube.com/@incoisofficialhyderabad942/"><img alt="YouTube" src="assets/images/ico-youtube.png"></a></li>
+                     <li><a target="_blank" title="LinkedIn" href="http://www.linkedin.com/company/indian-national-centre-for-ocean-information-services-incois-/?viewAsMember=true/"><img alt="LinkedIn" src="assets/images/ico-linkedin.png"></a></li>
+                     <li><a target="_blank" title="Instagram" href="https://www.instagram.com/incois_official/"><img alt="Instagram" src="assets/images/ico-instagram.png"></a></li>
+                  </ul>
+                  <a target="_blank" href="https://profile.globalsign.com/SiteSeal/siteSeal/profile/profile.do?p1=77bec532&p2=1981a0a9365eb4f302fd2be4261f111b415d1bef589ff5f37041ecad1f9d29ec260a55065b4e07aa7d81a2ae3443ebb65fa2&p3=7b3527f4c34b807ad0e4e6b2f0ec4b4e7dddb1c2" title="">
+                  <img src="theme/images/social/ssl-secure.png" alt="SSL Secure" width="50%">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="js/jquery-migrate-1.4.1.min.js"></script>
+      <script src="js/jquery.min_1.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="js/jquery-migrate-3.4.0.min.js"></script>
+      <script src="js/jquery-accessibleMegaMenu.js"></script>
+      <script src="js/framework.js"></script>
+      <script src="js/jquery.flexslider.js"></script>
+      <script src="js/font-size.js"></script>
+      <script src="js/swithcer.js"></script>
+      <script src="js/ma5gallery.js"></script>
+      <script src="js/megamenu.js"></script>
+      <script src="js/easyResponsiveTabs.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/script.js"></script>
+      <script>
+         function loadNewsContent() {
+           fetch('/site/load_news.jsp')
+             .then(response => response.text())
+             .then(data => {
+               document.getElementById("newsContent").innerHTML = data;
+             })
+             .catch(error => {
+               document.getElementById("newsContent").innerHTML = "<li>Error loading content.</li>";
+             });
+         }
+         
+         document.addEventListener("DOMContentLoaded", function () {
+           // Option 1: Load it immediately on page load
+           loadNewsContent();
+         
+           // Option 2: Only load when tab is clicked
+           // document.getElementById("hor_1_tab_item-0").addEventListener("click", loadNewsContent);
+         });
+      </script>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+           document.getElementById("hor_1_tab_item-2").addEventListener("click", function () {
+             fetch("/site/load_publications.jsp")
+               .then(response => response.text())
+               .then(data => {
+                 document.getElementById("publicationsContent").innerHTML = data;
+               })
+               .catch(error => {
+                 document.getElementById("publicationsContent").innerHTML = "<li>Error loading content.</li>";
+               });
+           });
+         });
+      </script>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+           document.getElementById("hor_1_tab_item-1").addEventListener("click", function () {
+             fetch("/site/load_awards.jsp")
+               .then(response => response.text())
+               .then(data => {
+                 document.getElementById("awardsContent").innerHTML = data;
+               })
+               .catch(error => {
+                 document.getElementById("awardsContent").innerHTML = "<li>Error loading content.</li>";
+               });
+           });
+         });
+      </script>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+           document.getElementById("hor_1_tab_item-4").addEventListener("click", function () {
+             fetch("/site/load_tenders.jsp")
+               .then(response => response.text())
+               .then(data => {
+                 document.getElementById("tendersContent").innerHTML = data;
+               })
+               .catch(error => {
+                 document.getElementById("tendersContent").innerHTML = "<li>Error loading content.</li>";
+               });
+           });
+         });
+      </script>
+      <div id="chatbot-container">
+         <a href="http://127.0.0.1:7860"
+         target="_blank" title="Open Chatbot">
+         <img src="images/Designer.png" alt="Chatbot" id="chatbot-icon">
+         </a>
+      </div>
+   </body>
+</html>
