@@ -1,0 +1,201 @@
+
+  
+  #serviceBtnContainer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #0E4D92;
+    color: #ccc;
+    transition: background-color 0.3s;
+   
+  }
+
+
+@media (max-width: 768px) {
+    .custom-background {
+        height: auto; /* Reset height */
+        background: none; /* Remove background */
+    }
+}
+
+  
+  .btn:hover {
+    background-color: #91610e;
+  }
+  
+  .btn.active {
+    background-color: #91610e;
+    color: white;
+  }
+  
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    
+  }
+  
+  .filterDiv {
+    display: none; 
+    text-align: center;
+    border: 1px solid #ccc;
+   
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .filterDiv img {
+    max-width: 150%;
+    height: auto;
+    
+  }
+  
+  .filterDiv.show {
+    display: block; /* Show filtered items */
+   
+  }
+  
+  
+
+
+
+  /* Styling for the social media links */
+  .social-container {
+    display: flex; /* Enables flex layout */
+    flex-wrap: wrap; /* Allows links to wrap onto a new line if needed */
+    gap: 15px; /* Adds spacing between social links */
+    padding: 20px;
+  }
+
+  .social-links {
+    display: flex; /* Aligns icons and text horizontally */
+    align-items: center; /* Vertically centers text and icon */
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Sets text color */
+    font-size: 16px; /* Adjusts font size for readability */
+  }
+
+  .social-links img {
+    margin-right: 8px; /* Adds space between icon and text */
+    width: 20px; /* Sets consistent size for icons */
+    height: 20px;
+  }
+
+  .social-links:hover {
+    color: #0077b5; /* Changes text color on hover */
+  }
+
+
+  /* Latest bulletins */
+  .bulletins-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+}
+
+.bulletin-item {
+    flex: 1 1 calc(25% - 20px); /* Each item takes 25% width minus gap */
+    max-width: 25%;
+    text-align: center;
+}
+
+.bulletin-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* Center image with some margin */
+}
+
+.bulletin-item p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+
+.app-links {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center content horizontally */
+  gap: 20px; /* Add space between images */
+  padding: 10px;
+}
+
+.ios-link, .android-links {
+  display: flex;
+  flex-direction: column; /* Stack the images inside each div */
+  align-items: center; /* Center the images within each div */
+}
+
+
+.footer-bottom-wrapper {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center; /* Ensures centering of text inside the content */
+}
+
+.copyright-content {
+  flex: 1;
+  font-size: 14px;
+  margin: 0 auto; /* Automatically centers the copyright-content */
+  text-align: center; /* Center the text */
+  padding: 10px;
+}
+
+a img {
+   /* Adjust SSL logo size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+ul.social-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  justify-content: center;
+}
+
+ul.social-links li {
+  display: inline-block;
+}
+
+ul.social-links img {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+     flex-direction: column;
+     align-items: center;
+  }
+
+  .copyright-content, .social-links {
+     flex: 1 1 100%;
+     text-align: center;
+  }
+
+  a img {
+     max-width: 80%;
+  }
+}
+
+
