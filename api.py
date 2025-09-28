@@ -1,16 +1,39 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from backend_logic import get_answer
-import pandas as pd
-import folium
-from fastapi.responses import HTMLResponse
-from sqlalchemy import create_engine, text
-import urllib.parse
+# api.py (MODIFIED)
 
-app = FastAPI()
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+import os
+from contextlib import asynccontextmanager
+
+# Import functions from your backend logic
+from backend_logic import get_answer, setup_database_and_vectors
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # This runs on startup
+    print("Server starting up...")
+    if not os.path.exists("chroma_store"): # Run setup only if it hasn't been run
+        setup_database_and_vectors()
+    else:
+        print("✅ Vector store already exists. Skipping setup.")
+    yield
+    # This runs on shutdown
+    print("Server shutting down...")
+    # Clean up temp audio files if any
+    for f in os.listdir("temp_audio"):
+        os.remove(os.path.join("temp_audio", f))
+
+
+app = FastAPI(lifespan=lifespan)
+
+# Mount a directory to serve the generated audio files
+app.mount("/audio", StaticFiles(directory="temp_audio"), name="audio")
 
 class QueryRequest(BaseModel):
     query: str
+    lang: str = 'en'
 
 @app.get("/health")
 def health_check():
@@ -18,28 +41,28 @@ def health_check():
 
 @app.post("/query")
 async def handle_query(request: QueryRequest):
-    answer = get_answer(request.query)
-    return {"response": answer}
+    """
+    Receives a text query and language, gets an answer, and returns
+    the text response and the LOCAL FILE PATH to the audio response.
+    """
+    if not request.query:
+        raise HTTPException(status_code=400, detail="Query cannot be empty.")
+    
+    text_answer, audio_path = get_answer(request.query, request.lang)
 
-@app.get("/map", response_class=HTMLResponse)
-async def get_map():
-    # PostgreSQL connection details for map data
-    DB_HOST = "localhost"
-    DB_NAME = "postgres"
-    DB_USER = "postgres"
-    DB_PASS = "postgres"
-    DB_PORT = "5433"
-    db_url = f"postgresql://{DB_USER}:{urllib.parse.quote_plus(DB_PASS)}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    engine = create_engine(db_url)
+    # --- MODIFICATION ---
+    # Instead of creating a URL, we now return the direct file path.
+    # The Gradio Audio component can handle a local file path directly.
+    return {"text_response": text_answer, "audio_path": audio_path}
+    # --- END MODIFICATION ---
 
-    with engine.connect() as connection:
-        query = text("SELECT * FROM argo_data LIMIT 50")
-        df = pd.read_sql_query(query, connection)
-
-    m = folium.Map(location=[df['latitude'].mean(), df['longitude'].mean()], zoom_start=2)
-    for index, row in df.iterrows():
-        folium.Marker(
-            location=[row['latitude'], row['longitude']],
-            popup=f"Temp: {row['temperature']:.2f}, Sal: {row['salinity']:.2f}"
-        ).add_to(m)
-    return m._repr_html_()
+@app.get("/audio/{filename}")
+async def get_audio_file(filename: str):
+    """
+    Serves a specific audio file from the temp directory.
+    (This is no longer used by the frontend but is good to keep for debugging)
+    """
+    file_path = os.path.join("temp_audio", filename)
+    if os.path.exists(file_path):
+        return FileResponse(file_path, media_type="audio/mpeg", filename=filename)
+    raise HTTPException(status_code=404, detail="Audio file not found.")
