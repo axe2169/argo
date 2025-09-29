@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f82d4cb1c4ad021e836933a0dbdc24a0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f82d4cb1c4ad021e836933a0dbdc24a0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f82d4cb1c4ad021e836933a0dbdc24a0 = L.map(
+                "map_f82d4cb1c4ad021e836933a0dbdc24a0",
+                {
+                    center: [15.24, 80.17999999999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b45762e90827387021bb42b38ac1381f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b45762e90827387021bb42b38ac1381f.addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+            var marker_0bdf2689659b69045974e41e792a61a7 = L.marker(
+                [10.5, 75.0],
+                {
+}
+            ).addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+        var popup_bc2e88c918c165cd7f8ac8f077dd49c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cce66db2b572e53fb50b906954448e7f = $(`<div id="html_cce66db2b572e53fb50b906954448e7f" style="width: 100.0%; height: 100.0%;"><b>ARGO Float</b><br>Latitude: 10.5<br>Longitude: 75.0<br>Temperature: 29.1 °C<br>Salinity: 34.7 ppt</div>`)[0];
+                popup_bc2e88c918c165cd7f8ac8f077dd49c8.setContent(html_cce66db2b572e53fb50b906954448e7f);
+            
+        
+
+        marker_0bdf2689659b69045974e41e792a61a7.bindPopup(popup_bc2e88c918c165cd7f8ac8f077dd49c8)
+        ;
+
+        
+    
+    
+            marker_0bdf2689659b69045974e41e792a61a7.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7dbabc67c8800cf4637c5894fe1cb393 = L.marker(
+                [12.8, 78.5],
+                {
+}
+            ).addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+        var popup_ad10fd54da0d51f39c5a94083c0bcdf0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76e18a96fb21be331ad781f738bc4f33 = $(`<div id="html_76e18a96fb21be331ad781f738bc4f33" style="width: 100.0%; height: 100.0%;"><b>ARGO Float</b><br>Latitude: 12.8<br>Longitude: 78.5<br>Temperature: 28.5 °C<br>Salinity: 34.6 ppt</div>`)[0];
+                popup_ad10fd54da0d51f39c5a94083c0bcdf0.setContent(html_76e18a96fb21be331ad781f738bc4f33);
+            
+        
+
+        marker_7dbabc67c8800cf4637c5894fe1cb393.bindPopup(popup_ad10fd54da0d51f39c5a94083c0bcdf0)
+        ;
+
+        
+    
+    
+            marker_7dbabc67c8800cf4637c5894fe1cb393.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_76cac31776247f97f7ac4f793070c7c2 = L.marker(
+                [15.2, 80.1],
+                {
+}
+            ).addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+        var popup_5b8831de6796fec30bd9dde924cc9e1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a0782d0a84a7f2836636257042e0831 = $(`<div id="html_0a0782d0a84a7f2836636257042e0831" style="width: 100.0%; height: 100.0%;"><b>ARGO Float</b><br>Latitude: 15.2<br>Longitude: 80.1<br>Temperature: 27.9 °C<br>Salinity: 34.5 ppt</div>`)[0];
+                popup_5b8831de6796fec30bd9dde924cc9e1e.setContent(html_0a0782d0a84a7f2836636257042e0831);
+            
+        
+
+        marker_76cac31776247f97f7ac4f793070c7c2.bindPopup(popup_5b8831de6796fec30bd9dde924cc9e1e)
+        ;
+
+        
+    
+    
+            marker_76cac31776247f97f7ac4f793070c7c2.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0579d24a08618745f1749fdc227e35d1 = L.marker(
+                [17.6, 82.3],
+                {
+}
+            ).addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+        var popup_d1ac5aea794e56fb87635febfa01a649 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_447c1997342bf88648808e44f2436aed = $(`<div id="html_447c1997342bf88648808e44f2436aed" style="width: 100.0%; height: 100.0%;"><b>ARGO Float</b><br>Latitude: 17.6<br>Longitude: 82.3<br>Temperature: 27.3 °C<br>Salinity: 34.4 ppt</div>`)[0];
+                popup_d1ac5aea794e56fb87635febfa01a649.setContent(html_447c1997342bf88648808e44f2436aed);
+            
+        
+
+        marker_0579d24a08618745f1749fdc227e35d1.bindPopup(popup_d1ac5aea794e56fb87635febfa01a649)
+        ;
+
+        
+    
+    
+            marker_0579d24a08618745f1749fdc227e35d1.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b5d894e52d86cdbae49ddf93f302d75f = L.marker(
+                [20.1, 85.0],
+                {
+}
+            ).addTo(map_f82d4cb1c4ad021e836933a0dbdc24a0);
+        
+    
+        var popup_b77631fa94fe394817a97e341b1f4272 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_240c9049bc9888bb78a0ffc19c807940 = $(`<div id="html_240c9049bc9888bb78a0ffc19c807940" style="width: 100.0%; height: 100.0%;"><b>ARGO Float</b><br>Latitude: 20.1<br>Longitude: 85.0<br>Temperature: 26.8 °C<br>Salinity: 34.3 ppt</div>`)[0];
+                popup_b77631fa94fe394817a97e341b1f4272.setContent(html_240c9049bc9888bb78a0ffc19c807940);
+            
+        
+
+        marker_b5d894e52d86cdbae49ddf93f302d75f.bindPopup(popup_b77631fa94fe394817a97e341b1f4272)
+        ;
+
+        
+    
+    
+            marker_b5d894e52d86cdbae49ddf93f302d75f.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
